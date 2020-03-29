@@ -10,9 +10,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DG.Tweening</RootNamespace>
     <AssemblyName>DOTween</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
+    <LangVersion>default</LangVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -61,13 +61,6 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="UnityEngine">
-      <HintPath>C:\Program Files (x86)\Unity\4.6\Editor\Data\Managed\UnityEngine.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-  </ItemGroup>
   <ItemGroup>
     <Compile Include="AutoPlay.cs" />
     <Compile Include="AxisConstraint.cs" />
@@ -170,10 +163,19 @@
     <Compile Include="TweenType.cs" />
     <Compile Include="UpdateType.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <HintPath>..\..\..\..\..\..\..\Library\Frameworks\Mono.framework\Versions\6.4.0\lib\mono\2.0-api\System.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\..\..\..\..\Applications\Unity\Hub\Editor\2017.4.36f1\Unity.app\Contents\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>call $(SolutionDir)PostBuild_DOTween.bat $(SolutionDir) $(TargetDir) $(TargetFileName) $(TargetName) DOTween bin</PostBuildEvent>
-  </PropertyGroup>
+  <!--  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />-->
+  <!--  <PropertyGroup>-->
+  <!--    <PostBuildEvent>call $(SolutionDir)PostBuild_DOTween.bat $(SolutionDir) $(TargetDir) $(TargetFileName) $(TargetName) DOTween bin</PostBuildEvent>-->
+  <!--  </PropertyGroup>-->
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

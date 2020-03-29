@@ -61,6 +61,12 @@ namespace DG.Tweening
             if (t == null || !t.active) return t;
 
             t.id = objectId;
+
+            if (objectId is string)
+            {
+                t.stringId = (string) objectId;
+            }
+            
             return t;
         }
         /// <summary>Sets a string ID for the tween (<see cref="Tween.stringId"/>), which can then be used as a filter with DOTween's static methods.<para/>
